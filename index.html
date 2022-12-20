@@ -21,8 +21,9 @@
                     <div class="col-12">
                         <div class="todo-container">
                             <ul class="list-unstyled p-3">
-                                <li class="p-1" :class="item.done ? 'line-through' : ''" v-for="(item, index) in todo_list">
+                                <li class="p-1 d-flex justify-content-between" :class="item.done ? 'line-through' : ''" v-for="(item, index) in todo_list">
                                     {{ index + 1 }} - {{ item.text }}
+                                    <button class="btn btn-square btn-danger btn-sm"><i class="fa-solid fa-trash" @click="removeTask(index)"></i></button>
                                 </li>
                             </ul>
                         </div>
