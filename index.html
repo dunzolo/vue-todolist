@@ -29,6 +29,12 @@
                         </div>
                     </div>
                 </div>
+                <div class="row mt-3">
+                    <div class="col-12 d-flex">
+                        <input type="text" placeholder="Aggiungi un nuovo task" class="form-control me-2" v-model="new_task">
+                        <button class="btn btn-primary" @click="addNewTask">Inserisci</button>
+                    </div>
+                </div>
             </div>
         </div>
         <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>

@@ -5,6 +5,7 @@ const{
 createApp({
     data() {
         return {
+            new_task: '',
             todo_list:[
                 {
                     text: 'Fare la spesa',
@@ -38,6 +39,14 @@ createApp({
         }
     },
     methods: {
+        addNewTask(){
+            let new_object = {
+                text: this.new_task,
+                done: false
+            }
+            this.todo_list.push(new_object);
+            this.new_task = '';
+        },
         removeTask(index){
             this.todo_list.splice(index, 1);
         }
