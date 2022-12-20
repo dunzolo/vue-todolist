@@ -22,7 +22,9 @@
                         <div class="todo-container">
                             <ul class="list-unstyled p-3">
                                 <li class="p-1 d-flex justify-content-between" :class="item.done ? 'line-through' : ''" v-for="(item, index) in todo_list">
-                                    {{ index + 1 }} - {{ item.text }}
+                                    <div class="cursor-pointer" @click="changeDone(index)">
+                                        {{ index + 1 }} - {{ item.text }}
+                                    </div>
                                     <button class="btn btn-square btn-danger btn-sm"><i class="fa-solid fa-trash" @click="removeTask(index)"></i></button>
                                 </li>
                             </ul>
@@ -31,7 +33,7 @@
                 </div>
                 <div class="row mt-3">
                     <div class="col-12 d-flex">
-                        <input type="text" placeholder="Aggiungi un nuovo task" class="form-control me-2" v-model="new_task">
+                        <input type="text" placeholder="Aggiungi un nuovo task" class="form-control me-2" v-model="new_task" @keyup.enter="addNewTask">
                         <button class="btn btn-primary" @click="addNewTask">Inserisci</button>
                     </div>
                 </div>

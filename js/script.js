@@ -48,7 +48,17 @@ createApp({
             this.new_task = '';
         },
         removeTask(index){
+            console.log(index);
             this.todo_list.splice(index, 1);
+        },
+        changeDone(index){
+            let task = this.todo_list[index]
+            if(task.done){
+                task.done = false
+            }
+            else{
+                task.done = true;
+            }
         }
     },
 }).mount('#app')
